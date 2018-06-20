@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Node_CMS," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="基于 Node.js &amp; MongoDB 的 轻量级 CMS 内容管理系统">
+<meta name="keywords" content="Node_CMS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NoderCMS 相关">
+<meta property="og:url" content="http://www.mutool.cn/2018/06/10/node/nodercms/index.html">
+<meta property="og:site_name" content="mutool">
+<meta property="og:description" content="基于 Node.js &amp; MongoDB 的 轻量级 CMS 内容管理系统">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-110955.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/1528421985822.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-094018.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-094031.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-094043.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-105256.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-105530.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-105648.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-105743.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-105812.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-110236.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/WX20180608-111348.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/WX20180608-111430.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/WX20180608-111755.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/WX20180608-111822.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/WX20180608-111837.png">
+<meta property="og:updated_time" content="2018-06-20T07:19:31.987Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NoderCMS 相关">
+<meta name="twitter:description" content="基于 Node.js &amp; MongoDB 的 轻量级 CMS 内容管理系统">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-110955.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.mutool.cn/2018/06/10/node/nodercms/"/>
+
+
+
+
+
+  <title>NoderCMS 相关 | mutool</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">mutool</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">i'll try anything once.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.mutool.cn/2018/06/10/node/nodercms/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="jesse">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mutool">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">NoderCMS 相关</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-10T10:29:22+08:00">
+                2018-06-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">Node.js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  基于 Node.js & MongoDB 的 轻量级 CMS 内容管理系统
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一-NoderCms"><a href="#一-NoderCms" class="headerlink" title="一. NoderCms"></a>一. <a href="http://www.nodercms.com/" target="_blank" rel="noopener">NoderCms</a></h2><blockquote>
+<p><a href="http://www.nodercms.com/download" target="_blank" rel="noopener">下载地址</a><br><a href="https://github.com/welkinwong/nodercms" target="_blank" rel="noopener">github 仓库地址</a><br><a href="http://demo.nodercms.com" target="_blank" rel="noopener">演示地址</a><br><a href="http://demo.nodercms.com/admin" target="_blank" rel="noopener">演示后台</a><br>后台账号密码：<a href="mailto:ghost@nodercms.com" target="_blank" rel="noopener">ghost@nodercms.com</a> 123456</p>
+</blockquote>
+<h2 id="二-本地运行"><a href="#二-本地运行" class="headerlink" title="二. 本地运行"></a>二. 本地运行</h2><ul>
+<li><h5 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --production</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h5 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm start</span><br></pre></td></tr></table></figure>
+<h2 id="三-连接至服务器-Mongodb"><a href="#三-连接至服务器-Mongodb" class="headerlink" title="三. 连接至服务器 Mongodb"></a>三. 连接至服务器 Mongodb</h2><ul>
+<li><h5 id="下载-openvpn-客户端"><a href="#下载-openvpn-客户端" class="headerlink" title="下载 openvpn 客户端"></a><a href="http://xclient.info/s/viscosity.html?t=033774a17acee6ea5c77b73f98f6d278de2bb635" target="_blank" rel="noopener">下载 openvpn 客户端</a></h5></li>
+<li><h5 id="服务器配置-openvpn-相关，并且给我一个-openvpn-相关配置的文件夹"><a href="#服务器配置-openvpn-相关，并且给我一个-openvpn-相关配置的文件夹" class="headerlink" title="服务器配置 openvpn 相关，并且给我一个 openvpn 相关配置的文件夹"></a>服务器配置 openvpn 相关，并且给我一个 openvpn 相关配置的文件夹</h5><img src="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-110955.png" alt="image"></li>
+<li>相关配置参数，导入文件夹自动生成的<br><img src="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/1528421985822.jpg" alt="image"><br><img src="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-094018.png" alt="image"><br><img src="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-094031.png" alt="image"><br><img src="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-094043.png" alt="image"></li>
+<li>输入服务端给你设置的账号密码<br><img src="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-105256.png" alt="image"></li>
+</ul>
+<h2 id="四-MongoDB-查看"><a href="#四-MongoDB-查看" class="headerlink" title="四. MongoDB 查看"></a>四. MongoDB 查看</h2><ul>
+<li><h5 id="下载-nosqlbooster"><a href="#下载-nosqlbooster" class="headerlink" title="下载 nosqlbooster"></a><a href="https://nosqlbooster.com/downloads" target="_blank" rel="noopener">下载 nosqlbooster</a></h5></li>
+<li><h5 id="连接至服务器-10-254-242-36"><a href="#连接至服务器-10-254-242-36" class="headerlink" title="连接至服务器 10.254.242.36"></a>连接至服务器 10.254.242.36</h5><img src="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-105530.png" alt="image"></li>
+<li><h5 id="新建数据库表"><a href="#新建数据库表" class="headerlink" title="新建数据库表"></a>新建数据库表</h5><img src="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-105648.png" alt="image"></li>
+<li><h5 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h5><img src="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-105743.png" alt="image"></li>
+<li><h5 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h5><img src="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-105812.png" alt="image"></li>
+<li><h5 id="设置账号密码，读写权限，run-执行命令"><a href="#设置账号密码，读写权限，run-执行命令" class="headerlink" title="设置账号密码，读写权限，run 执行命令"></a>设置账号密码，读写权限，run 执行命令</h5><img src="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/nodercms/WX20180608-110236.png" alt="image"></li>
+<li>删除数据库表，鼠标右键 Drop Database</li>
+</ul>
+<h2 id="五-网页配置"><a href="#五-网页配置" class="headerlink" title="五. 网页配置"></a>五. 网页配置</h2><ul>
+<li>打开本地网页 <a href="http://localhost:3000/admin/install" target="_blank" rel="noopener">http://localhost:3000/admin/install</a><br><img src="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/WX20180608-111348.png" alt="image"></li>
+<li>MongoDB 数据库连接配置<br><img src="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/WX20180608-111430.png" alt="image"></li>
+<li>设置 CMS 相关参数<br><img src="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/WX20180608-111755.png" alt="image"></li>
+<li>登陆系统<br><img src="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/WX20180608-111822.png" alt="image"></li>
+<li>进入后台主页<br><img src="https://raw.githubusercontent.com/VonJie/images/master/blog/nodercms/WX20180608-111837.png" alt="image"></li>
+</ul>
+<h2 id="六-注意事项"><a href="#六-注意事项" class="headerlink" title="六. 注意事项"></a>六. 注意事项</h2><ul>
+<li>重新安装<ul>
+<li>删除数据库，删除 install.lock</li>
+<li>再次 npm start 后，在连接数据库环节回一直报错</li>
+<li>删除本地文件，重走 流程一 即可。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Node-CMS/" rel="tag"># Node_CMS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/22/hexo/" rel="next" title="使用Hexo搭建个人博客">
+                <i class="fa fa-chevron-left"></i> 使用Hexo搭建个人博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/12/python/basics/" rel="prev" title="Python安装及基础知识">
+                Python安装及基础知识 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">jesse</p>
+              <p class="site-description motion-element" itemprop="description">前端开发爱好者</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-NoderCms"><span class="nav-number">1.</span> <span class="nav-text">一. NoderCms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-本地运行"><span class="nav-number">2.</span> <span class="nav-text">二. 本地运行</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装包"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">安装包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#启动"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">启动</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-连接至服务器-Mongodb"><span class="nav-number">3.</span> <span class="nav-text">三. 连接至服务器 Mongodb</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#下载-openvpn-客户端"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">下载 openvpn 客户端</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#服务器配置-openvpn-相关，并且给我一个-openvpn-相关配置的文件夹"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">服务器配置 openvpn 相关，并且给我一个 openvpn 相关配置的文件夹</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-MongoDB-查看"><span class="nav-number">4.</span> <span class="nav-text">四. MongoDB 查看</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#下载-nosqlbooster"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">下载 nosqlbooster</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#连接至服务器-10-254-242-36"><span class="nav-number">4.0.0.2.</span> <span class="nav-text">连接至服务器 10.254.242.36</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新建数据库表"><span class="nav-number">4.0.0.3.</span> <span class="nav-text">新建数据库表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#命名"><span class="nav-number">4.0.0.4.</span> <span class="nav-text">命名</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加用户"><span class="nav-number">4.0.0.5.</span> <span class="nav-text">添加用户</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置账号密码，读写权限，run-执行命令"><span class="nav-number">4.0.0.6.</span> <span class="nav-text">设置账号密码，读写权限，run 执行命令</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-网页配置"><span class="nav-number">5.</span> <span class="nav-text">五. 网页配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六-注意事项"><span class="nav-number">6.</span> <span class="nav-text">六. 注意事项</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <!--
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  
+  <span class="author" itemprop="copyrightHolder">jesse</span>
+
+  
+</div>
+
+
+  <div class="powered-by">私人定制</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+
+  <div class="theme-info"><a class="theme-link" target="_blank" href="https://github.com/Wenj2/">gitthub</a></div>
+
+
+
+-->
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
