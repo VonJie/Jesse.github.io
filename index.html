@@ -501,28 +501,14 @@
 
       
         
-          
-            <h2 id="什么是-Mongoose"><a href="#什么是-Mongoose" class="headerlink" title="什么是 Mongoose"></a>什么是 <code>Mongoose</code></h2><h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a><a href="http://mongoosejs.com/" target="_blank" rel="noopener">官网</a></h3><h3 id="中文文档-v4"><a href="#中文文档-v4" class="headerlink" title="中文文档 v4"></a><a href="https://mongoose.shujuwajue.com/" target="_blank" rel="noopener">中文文档 v4</a></h3><h2 id="Mongoose-是在-node-js-环境下对-mongodb-进行便捷操作的对象模型工具"><a href="#Mongoose-是在-node-js-环境下对-mongodb-进行便捷操作的对象模型工具" class="headerlink" title="Mongoose 是在 node.js 环境下对 mongodb 进行便捷操作的对象模型工具"></a><code>Mongoose</code> 是在 <code>node.js</code> 环境下对 <code>mongodb</code> 进行便捷操作的对象模型工具</h2><h2 id="Api-文档"><a href="#Api-文档" class="headerlink" title="Api 文档"></a>Api 文档</h2><h3 id="Connections"><a href="#Connections" class="headerlink" title="Connections"></a><code>Connections</code></h3><h4 id="connect"><a href="#connect" class="headerlink" title="connect"></a><code>connect</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// es5</span><br><span class="line">const mongoose = require(&apos;mongoose&apos;)</span><br><span class="line">// es6</span><br><span class="line">import mongoose from mongoose</span><br><span class="line">// 连接本地</span><br><span class="line">mongoose.connect(`mongodb://localhost/Mongodb`)</span><br><span class="line"></span><br><span class="line">// 账号密码连接内网 IP</span><br><span class="line">mongoose.connect(`mongodb://User:Password@10.0.0.211:27017/Mongodb`)</span><br></pre></td></tr></table></figure>
-<h3 id="模式-Schemas"><a href="#模式-Schemas" class="headerlink" title="模式 Schemas"></a>模式 <code>Schemas</code></h3><p><code>Mongoose</code> 的一切都始于一个 <code>Schema</code> 。每个 <code>schema</code> 映射到 <code>MongoDB</code> 的集合 <code>collection</code> 和定义该集合 <code>collection</code> 中的文档的形式。</p>
-<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Schema &#125; from mongoose</span><br><span class="line"></span><br><span class="line">let blogSchema = new Schema(&#123;</span><br><span class="line">    title: String,</span><br><span class="line">    comments: [</span><br><span class="line">        &#123;</span><br><span class="line">            body: String,</span><br><span class="line">            date: Date</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    date: &#123;</span><br><span class="line">        type: Date,</span><br><span class="line">        fefault: Date.now</span><br><span class="line">    &#125;,</span><br><span class="line">    hidden: Boolean,</span><br><span class="line">    meta: &#123;</span><br><span class="line">        votes: Number</span><br><span class="line">    &#125;,</span><br><span class="line">    binary:  Buffer,</span><br><span class="line">    mixed: Schema.Types.Mixed,</span><br><span class="line">    _someId: Schema.Types.ObjectId,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h4><h5 id="String"><a href="#String" class="headerlink" title="String"></a><code>String</code></h5><h5 id="Number"><a href="#Number" class="headerlink" title="Number"></a><code>Number</code></h5><h5 id="Date"><a href="#Date" class="headerlink" title="Date"></a><code>Date</code></h5><ul>
-<li>内置的日期的方法</li>
-<li>在mongoose用英语改变跟踪逻辑不是钩子</li>
-</ul>
-<h5 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a><code>Buffer</code></h5><h5 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a><code>Boolean</code></h5><h5 id="Mixed"><a href="#Mixed" class="headerlink" title="Mixed"></a><code>Mixed</code></h5><ul>
-<li>一个“什么都行”的SchemaType，它的灵活性会带来权衡它难维护</li>
-<li><p>以下是等价的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let Any = new Schema(&#123; any: &#123;&#125; &#125;);</span><br><span class="line">let Any = new Schema(&#123; any: Schema.Types.Mixed &#125;);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>保存修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">person.anything = &#123; x: [3, 4, &#123; y: &quot;changed&quot; &#125;] &#125;;</span><br><span class="line">person.markModified(&apos;anything&apos;);</span><br><span class="line">person.save(); // anything will now get saved</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="Objectid"><a href="#Objectid" class="headerlink" title="Objectid"></a><code>Objectid</code></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let Car = new Schema(&#123; driver: Schema.Types.ObjectId &#125;);</span><br></pre></td></tr></table></figure>
-<h5 id="Array"><a href="#Array" class="headerlink" title="Array"></a><code>Array</code></h5><h3 id="模型-Model"><a href="#模型-Model" class="headerlink" title="模型 Model"></a>模型 <code>Model</code></h3><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let uSchema = new Schema(&#123;</span><br><span class="line">    name: String</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">let uModel = mongoose.model(&apos;uModel&apos;, uSchema)</span><br></pre></td></tr></table></figure>
-<h4 id="保存实例"><a href="#保存实例" class="headerlink" title="保存实例"></a>保存实例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let silly = new uModel(&#123;</span><br><span class="line">    name: &apos;silly&apos;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">silly.save(function(err)&#123;</span><br><span class="line">    if(err) return handle(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="查询-Query"><a href="#查询-Query" class="headerlink" title="查询 Query"></a>查询 <code>Query</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let uSchema = new Schema(&#123;...obj&#125;)</span><br><span class="line"></span><br><span class="line">let uModel = mongoose.model(&apos;uModel&apos;, yourSchema);</span><br><span class="line"></span><br><span class="line">uModel.find(&#123;name: /^s/i&#125;, function(err, res)&#123;</span><br><span class="line">    // res is your query result</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-          
+          Mongoose 是在 node.js 环境下对 mongodb 进行便捷操作的对象模型工具
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/26/web/mongoose/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -804,10 +790,14 @@
 
       
         
-          
-            <h3 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h3><p>Supervisor 是用 Python 开发的一个 client/server 服务，是 Linux/Unix 系统下的一个进程管理工具。</p>
-<h4 id="官网"><a href="#官网" class="headerlink" title="官网"></a><a href="http://supervisord.org/" target="_blank" rel="noopener">官网</a></h4>
-          
+          在 web 应用部署到线上后，需要保证应用一直处于运行状态，在遇到程序异常、报错等情况，导致 web 应用终止时，需要保证程序可以立刻重启，继续提供服务。所以，就需要一个工具，时刻监控 web 应用的运行情况，管理该进程。Supervisor 就是解决这种需求的工具，可以保证程序崩溃后，重新把程序启动起来等功能。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/22/os/supervisor/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -949,7 +939,7 @@
           
             <h3 id="tar-压缩打包、解压文件"><a href="#tar-压缩打包、解压文件" class="headerlink" title="tar 压缩打包、解压文件"></a><code>tar</code> 压缩打包、解压文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 将 file 目录压缩打包成 name.tar</span><br><span class="line">$ tar cvfz name.tar file</span><br><span class="line"></span><br><span class="line"># 解压 name.tar</span><br><span class="line">$ tar xvfz name.tar</span><br><span class="line"></span><br><span class="line"># 解压 name.tar 到 file</span><br><span class="line">$ tar xvfz name.tar -C file</span><br></pre></td></tr></table></figure>
 <h3 id="scp-secure-copy-远程拷贝"><a href="#scp-secure-copy-远程拷贝" class="headerlink" title="scp secure copy 远程拷贝"></a><code>scp</code> secure copy 远程拷贝</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 本质是利用SSH传输文件</span><br><span class="line"># scp [参数] [原路径] [目标路径]</span><br><span class="line"></span><br><span class="line"># 将本地文件 name.tar 拷贝到服务器 path 目录下</span><br><span class="line">$ scp name.tar node@120.92.103.226:path</span><br><span class="line"></span><br><span class="line"># 将服务器 path 目录下的 name.tar 拷贝到 本地 file 下</span><br><span class="line">$ scp node@120.92.103.226:path/name.tar file</span><br></pre></td></tr></table></figure>
-<h3 id="ln-命令用来为文件创件连接"><a href="#ln-命令用来为文件创件连接" class="headerlink" title="ln 命令用来为文件创件连接"></a><code>ln</code> 命令用来为文件创件连接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Centos-查看版本信息"><a href="#Centos-查看版本信息" class="headerlink" title="Centos 查看版本信息"></a><code>Centos</code> 查看版本信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ cat /etc/redhat-release </span><br><span class="line"></span><br><span class="line">// 查看 lunix 系统信息</span><br><span class="line">$ uname -a</span><br><span class="line">$ cat /proc/version</span><br></pre></td></tr></table></figure>
           
         
       
