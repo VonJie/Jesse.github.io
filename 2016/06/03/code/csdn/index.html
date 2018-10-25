@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="csdn," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="CSDN 代码迁移">
+<meta name="keywords" content="csdn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSDN 代码迁移">
+<meta property="og:url" content="http://www.mutool.cn/2016/06/03/code/csdn/index.html">
+<meta property="og:site_name" content="mutool">
+<meta property="og:description" content="CSDN 代码迁移">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-25T02:21:05.171Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSDN 代码迁移">
+<meta name="twitter:description" content="CSDN 代码迁移">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.mutool.cn/2016/06/03/code/csdn/"/>
+
+
+
+
+
+  <title>CSDN 代码迁移 | mutool</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">mutool</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">i'll try anything once.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.mutool.cn/2016/06/03/code/csdn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="jesse">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mutool">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSDN 代码迁移</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-03T11:05:47+08:00">
+                2016-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/code/" itemprop="url" rel="index">
+                    <span itemprop="name">code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  CSDN 代码迁移
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;form :input.required&quot;).each(function()&#123;</span><br><span class="line">	var $required = $(&quot;&lt;strong class=&apos;high&apos;&gt;*&lt;/strong&gt;&quot;);</span><br><span class="line">	$(this).parent().append($required);</span><br><span class="line">&#125;);</span><br><span class="line">$(&quot;form :input&quot;).blur(function()&#123;</span><br><span class="line">	var $parent = $(this).parent();</span><br><span class="line">	$parent.find(&quot;.formtips&quot;).remove();</span><br><span class="line">	//验证用户名</span><br><span class="line">	if($(this).is(&apos;#username&apos;))&#123;</span><br><span class="line">		if(this.value == &quot;&quot; || this.value.length &lt; 6)&#123;</span><br><span class="line">			var errorMsg = &apos;请输入至少6位的用户名.&apos;;</span><br><span class="line">			$parent.append(&quot;&lt;span class=&apos;formtips onError&apos;&gt;&quot;+errorMsg+&quot;&lt;/span&gt;&quot;);</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			var okMsg = &apos;输入正确&apos;;</span><br><span class="line">			$parent.append(&apos;&lt;span class=&quot;formtips onSuccess&quot;&gt;&apos;+okMsg+&apos;&lt;/span&gt;&apos;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	//验证邮箱</span><br><span class="line">	if($(this).is(&apos;#email&apos;))&#123;</span><br><span class="line">		if(this.value==&quot;&quot; || (this.value!=&quot;&quot; &amp;&amp; !/.+@.+\.[a-zA-Z]&#123;2,4&#125;$/.test(this.value)))&#123;</span><br><span class="line">			var errorMsg = &apos;请输入正确的E-Mail地址.&apos;;</span><br><span class="line">			$parent.append(&apos;&lt;span class=&quot;formtips onError&quot;&gt;&apos;+errorMsg+&apos;&lt;/span&gt;&apos;);</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			var okMsg = &apos;输入正确.&apos;;</span><br><span class="line">			$parent.append(&apos;&lt;span class=&quot;formtips onSuccess&quot;&gt;&apos;+okMsg+&apos;&lt;/span&gt;&apos;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;).keyup(function()&#123;</span><br><span class="line">	$(this).triggerHandler(&quot;blur&quot;);</span><br><span class="line">&#125;).focus(function()&#123;</span><br><span class="line">	$(this).triggerHandler(&quot;blur&quot;);</span><br><span class="line">&#125;);		//keyup()和focus()即时判断,triggerHandler获取blur事件，但不执行blur()默认行为（即失去焦点）</span><br><span class="line"></span><br><span class="line">$(&apos;#refer&apos;).click(function()&#123;</span><br><span class="line">	$(&quot;form .required:input&quot;).trigger(&apos;blur&apos;);		//模拟失焦事件</span><br><span class="line">	var numError = $(&apos;form .onError&apos;).length;</span><br><span class="line">	if(numError)&#123;	//有值为true,0为false,</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line">	alert(&quot;注册成功,密码已发送到你的邮箱,请查收.&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="翻页动画"><a href="#翻页动画" class="headerlink" title="翻页动画"></a>翻页动画</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">var page = 1;</span><br><span class="line">var i = 3;</span><br><span class="line">//下一页</span><br><span class="line">$(&quot;span.next&quot;).click(function()&#123;</span><br><span class="line">	var $parent = $(this).parents(&quot;div.v_show&quot;);</span><br><span class="line">	var $v_show = $parent.find(&quot;div.v_content_list&quot;);</span><br><span class="line">	var $v_content = $parent.find(&quot;div.v_content&quot;);</span><br><span class="line">	</span><br><span class="line">	var v_width = $parent.width();</span><br><span class="line">	var len = $v_show.find(&quot;li&quot;).length;</span><br><span class="line">	var page_count = Math.ceil(len / i)   //只要不是整数，就往大的方向取最小的整数，如3.1151 ~= 4；</span><br><span class="line">	if (!$v_show.is(&quot;:animated&quot;)) &#123;</span><br><span class="line">		if (page == page_count) &#123;</span><br><span class="line">			$v_show.animate(&#123;left: &apos;0px&apos;&#125;,&quot;slow&quot;);</span><br><span class="line">			</span><br><span class="line">			page = 1;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			$v_show.animate(&#123;left: &apos;-=&apos;+v_width&#125;,&quot;normal&quot;);</span><br><span class="line">			</span><br><span class="line">			page++;</span><br><span class="line">		&#125;</span><br><span class="line">		$parent.find(&quot;span&quot;).eq((page - 1)).addClass(&quot;current&quot;)</span><br><span class="line">			   .siblings().removeClass(&quot;current&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line">//上一页</span><br><span class="line">$(&quot;span.prev&quot;).click(function()&#123;</span><br><span class="line">	var $parent = $(this).parents(&quot;div.v_show&quot;);</span><br><span class="line">	var $v_show = $parent.find(&quot;div.v_content_list&quot;);</span><br><span class="line">	var $v_content = $parent.find(&quot;div.v_content&quot;);</span><br><span class="line">	</span><br><span class="line">	var v_width = $parent.width();</span><br><span class="line">	var len = $v_show.find(&quot;li&quot;).length;</span><br><span class="line">	var page_count = Math.ceil(len / i)   //只要不是整数，就往大的方向取最小的整数，如3.1151 ~= 4；</span><br><span class="line">	if (!$v_show.is(&quot;:animated&quot;)) &#123;</span><br><span class="line">		if (page == 1) &#123;</span><br><span class="line">			$v_show.animate(&#123;left: &apos;-=&apos;+v_width*(page_count - 1)&#125;,&quot;slow&quot;);</span><br><span class="line">			</span><br><span class="line">			page = page_count</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			$v_show.animate(&#123;left: &apos;+=&apos;+v_width&#125;,&quot;normal&quot;);</span><br><span class="line">			</span><br><span class="line">			page--;</span><br><span class="line">		&#125;</span><br><span class="line">		$parent.find(&quot;span&quot;).eq((page - 1)).addClass(&quot;current&quot;)</span><br><span class="line">			   .siblings().removeClass(&quot;current&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="鼠标悬停图片预览，制作title提示"><a href="#鼠标悬停图片预览，制作title提示" class="headerlink" title="鼠标悬停图片预览，制作title提示"></a>鼠标悬停图片预览，制作title提示</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">//图片预览</span><br><span class="line">$(&quot;.imgtip li a&quot;).mouseover(function(e)&#123;</span><br><span class="line">	myTitle = this.title;</span><br><span class="line">	myHref = $(this).find(&quot;img&quot;).attr(&quot;src&quot;);</span><br><span class="line">	this.title=&quot;&quot;;</span><br><span class="line">	var imgtip = &quot;&lt;div id=&apos;imgtip&apos;&gt;&lt;img src=&apos;&quot;+myHref+&quot;&apos;&gt;&lt;br /&gt;&quot;+myTitle+&quot;&lt;/div&gt;&quot;;</span><br><span class="line">	</span><br><span class="line">	$(&quot;body&quot;).append(imgtip);</span><br><span class="line">	var h = $(&quot;#imgtip img&quot;).height();</span><br><span class="line">	$(&quot;#imgtip&quot;).css(&#123;</span><br><span class="line">			&quot;position&quot;: &quot;absolute&quot;,</span><br><span class="line">			&quot;top&quot;: (e.pageY - h - 20) + &quot;px&quot;,</span><br><span class="line">			&quot;left&quot;: (e.pageX + 10) + &quot;px&quot;</span><br><span class="line">		&#125;).show(&quot;fast&quot;);</span><br><span class="line">&#125;).mouseout(function()&#123;</span><br><span class="line">	this.title = myTitle;</span><br><span class="line">	$(&quot;#imgtip&quot;).remove();</span><br><span class="line">&#125;).mousemove(function(e)&#123;</span><br><span class="line">	var h = $(&quot;#imgtip img&quot;).height();</span><br><span class="line">	$(&quot;#imgtip&quot;).css(&#123;</span><br><span class="line">		&quot;top&quot;: (e.pageY - h - 20) + &quot;px&quot;,</span><br><span class="line">		&quot;left&quot;: (e.pageX + 10) + &quot;px&quot;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//title提示</span><br><span class="line">$(&quot;a.tooltip&quot;).mouseover(function(e)&#123;</span><br><span class="line">	this.myTitle = this.title;		//先存起来</span><br><span class="line">	this.title = &quot;&quot;;		//再清空</span><br><span class="line">	var tooltip = &quot;&lt;div id=&apos;tooltip&apos;&gt;&quot;+this.myTitle +&quot;&lt;/div&gt;&quot;;</span><br><span class="line">	</span><br><span class="line">	$(&quot;body&quot;).append(tooltip);</span><br><span class="line">	$(&quot;#tooltip&quot;)</span><br><span class="line">		.css(&#123;</span><br><span class="line">			&quot;position&quot;: &quot;absolute&quot;,</span><br><span class="line">			&quot;top&quot;: (e.pageY + 20) + &quot;px&quot;,</span><br><span class="line">			&quot;left&quot;: (e.pageX + 10) + &quot;px&quot;</span><br><span class="line">		&#125;).show(&quot;fast&quot;);</span><br><span class="line">&#125;).mouseout(function()&#123;</span><br><span class="line">	this.title = this.myTitle;</span><br><span class="line">	$(&quot;#tooltip&quot;).remove();</span><br><span class="line">&#125;).mousemove(function(e)&#123;</span><br><span class="line">	$(&quot;#tooltip&quot;)</span><br><span class="line">		.css(&#123;</span><br><span class="line">			&quot;top&quot;: (e.pageY + 20) + &quot;px&quot;,</span><br><span class="line">			&quot;left&quot;: (e.pageX + 10) + &quot;px&quot;</span><br><span class="line">		&#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Cookie网页更换皮肤"><a href="#Cookie网页更换皮肤" class="headerlink" title="Cookie网页更换皮肤"></a>Cookie网页更换皮肤</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var $li = $(&quot;#skin li&quot;);</span><br><span class="line">	//引用cookie，当用户刷新或关闭网页时，网页依然保持选中的皮肤（jquery.cookie.js）</span><br><span class="line">$li.click(function()&#123;</span><br><span class="line">	switchSkin(this.id)</span><br><span class="line">&#125;);</span><br><span class="line">var cookie_skin = $.cookie(&quot;MyCssSkin&quot;);</span><br><span class="line">if(cookie_skin)&#123;	//如果确实存在Cookie</span><br><span class="line">	switchSkin(cookie_skin)</span><br><span class="line">&#125;</span><br><span class="line">function switchSkin(skinName)&#123;</span><br><span class="line">	$(&quot;#&quot;+skinName).addClass(&quot;selected&quot;)</span><br><span class="line">		.siblings().removeClass(&quot;selected&quot;);</span><br><span class="line">	$(&quot;#cssfile&quot;).attr(&quot;href&quot;,&quot;css/&quot;+skinName+&quot;.css&quot;);</span><br><span class="line">	$.cookie(&quot;MyCssSkin&quot;,skinName,&#123;path:&apos;/&apos;,expires:10&#125;);		//计入cookie； $.cookie(名称,值,&#123;路径,储存时间&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="移动端font-size根据屏幕大小改变"><a href="#移动端font-size根据屏幕大小改变" class="headerlink" title="移动端font-size根据屏幕大小改变"></a>移动端font-size根据屏幕大小改变</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//当设备的方向变化（设备横向持或纵向持）此事件被触发。绑定此事件时，</span><br><span class="line">//注意现在当浏览器不支持orientationChange事件的时候我们绑定了resize 事件。</span><br><span class="line">//总来的来就是监听当然窗口的变化，一旦有变化就需要重新设置根字体的值</span><br><span class="line">var docEl = document.documentElement,</span><br><span class="line">    resizeEvt = &apos;orientationchange&apos; in window ? &apos;orientationchange&apos; : &apos;resize&apos;,</span><br><span class="line">    recalc = function() &#123;</span><br><span class="line">        docEl.style.fontSize = 16 * (docE1.clientWidth / 320) + &apos;px&apos;;</span><br><span class="line">    &#125;;</span><br><span class="line">//绑定浏览器缩放与加载时间</span><br><span class="line">window.addEventListener(resizeEvt, recalc, false);</span><br><span class="line">document.addEventListener(&apos;DOMContentLoaded&apos;, recalc, false);</span><br><span class="line"></span><br><span class="line">//根据实际情况通过设计稿与当前可视区的大小做一个比例关系，通过这个比例进行缩放处理</span><br><span class="line">//给html设置fontSize大小，其实就是在DOMContentLoaded或者resize变化后调整fontSize的大小，从而调整rem的比值关系。</span><br></pre></td></tr></table></figure>
+<h3 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//One()方法，为元素绑定处理函数，处理函数触发一次后，立即被删除</span><br><span class="line">$(&quot;body&quot;).one(&quot;click&quot;,function()&#123;</span><br><span class="line">	alert(1);</span><br><span class="line">	var txt = $(&quot;#msg&quot;).html() + &quot;&lt;p&gt;body元素被点击。&lt;/p&gt;&quot;;</span><br><span class="line">	$(&quot;#msg&quot;).html(txt);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(&quot;#content&quot;).one(&quot;click&quot;,function()&#123;</span><br><span class="line">	alert(2);</span><br><span class="line">	var txt = $(&quot;#msg&quot;).html() + &quot;&lt;p&gt;content元素被点击。&lt;/p&gt;&quot;;</span><br><span class="line">	$(&quot;#msg&quot;).html(txt);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(&quot;#content span&quot;).bind(&quot;click&quot;,function(event)&#123;	//event:事件对象</span><br><span class="line">	alert(3);</span><br><span class="line">	var txt = $(&quot;#msg&quot;).html() + &quot;&lt;p&gt;span元素被点击。&lt;/p&gt;&quot;;</span><br><span class="line">	$(&quot;#msg&quot;).html(txt);</span><br><span class="line">	//event.stopPropagation();		//停止事件冒泡</span><br><span class="line">	//event.preventDefault()		//阻止默认时间行为，如A标签的跳转，提交按钮等。</span><br><span class="line">	return false;		//等同与上面的效果集合</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="百度富文本编辑器"><a href="#百度富文本编辑器" class="headerlink" title="百度富文本编辑器"></a>百度富文本编辑器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">var ue = UE.getEditor(&apos;editor&apos;+j,&#123;</span><br><span class="line">	toolbars: [[</span><br><span class="line">        &apos;fullscreen&apos;, &apos;source&apos;, &apos;|&apos;, &apos;undo&apos;, &apos;redo&apos;, &apos;|&apos;,</span><br><span class="line">        &apos;bold&apos;, &apos;italic&apos;, &apos;underline&apos;, &apos;fontborder&apos;, &apos;strikethrough&apos;, &apos;superscript&apos;, &apos;subscript&apos;, &apos;removeformat&apos;, &apos;formatmatch&apos;, &apos;autotypeset&apos;, &apos;blockquote&apos;, &apos;pasteplain&apos;, &apos;|&apos;, &apos;forecolor&apos;, &apos;backcolor&apos;, &apos;insertorderedlist&apos;, &apos;insertunorderedlist&apos;, &apos;selectall&apos;, &apos;cleardoc&apos;, &apos;|&apos;,</span><br><span class="line">        &apos;rowspacingtop&apos;, &apos;rowspacingbottom&apos;, &apos;lineheight&apos;, &apos;|&apos;,</span><br><span class="line">        &apos;customstyle&apos;, &apos;paragraph&apos;, &apos;fontfamily&apos;, &apos;fontsize&apos;, &apos;|&apos;,</span><br><span class="line">        &apos;directionalityltr&apos;, &apos;directionalityrtl&apos;, &apos;indent&apos;, &apos;|&apos;,</span><br><span class="line">        &apos;justifyleft&apos;, &apos;justifycenter&apos;, &apos;justifyright&apos;, &apos;justifyjustify&apos;, &apos;|&apos;, &apos;touppercase&apos;, &apos;tolowercase&apos;, &apos;|&apos;,</span><br><span class="line">        &apos;link&apos;, &apos;unlink&apos;, &apos;|&apos;, &apos;imagenone&apos;, &apos;imageleft&apos;, &apos;imageright&apos;, &apos;imagecenter&apos;, &apos;|&apos;,</span><br><span class="line">        &apos;simpleupload&apos;, &apos;insertimage&apos;, &apos;emotion&apos;, &apos;scrawl&apos;, &apos;music&apos;, &apos;attachment&apos;,&apos;|&apos;,</span><br><span class="line">        &apos;horizontal&apos;, &apos;date&apos;, &apos;time&apos;, &apos;spechars&apos;,&apos;|&apos;,</span><br><span class="line">        &apos;inserttable&apos;, &apos;deletetable&apos;,&apos;mergecells&apos;, &apos;mergeright&apos;, &apos;mergedown&apos;, &apos;splittocells&apos;, &apos;splittorows&apos;, &apos;splittocols&apos;, &apos;charts&apos;,</span><br><span class="line">	]],</span><br><span class="line">	autoHeightEnabled: true,</span><br><span class="line">	autoFloatEnabled: true,</span><br><span class="line">	initialStyle: &apos;p&#123;line-height:1em; font-size: 16px; &#125;&apos;,</span><br><span class="line">	initialContent: &apos;&apos;,</span><br><span class="line">    autoClearinitialContent:true,</span><br><span class="line">    focus: false,</span><br><span class="line">&#125;);</span><br><span class="line">ue.addListener(&quot;contentChange&quot;,function()&#123;</span><br><span class="line">    var s = ue.getContent();</span><br><span class="line">    if ($(s).length == &quot;&quot;) &#123;</span><br><span class="line">        var a = &quot;&lt;p&gt;点此编辑『富文本』内容 ——&amp;gt;&lt;/p&gt;&lt;p&gt;你可以对文字进行&lt;strong&gt;加粗&lt;/strong&gt;、&lt;em&gt;斜体&lt;/em&gt;、&lt;span style=&apos;text-decoration: underline;&apos;&gt;下划线&lt;/span&gt;、&lt;span style=&apos;text-decoration: line-through;&apos;&gt;删除线&lt;/span&gt;、文字&lt;span style=&apos;color: rgb(0, 176, 240);&apos;&gt;颜色&lt;/span&gt;、&lt;span style=&apos;background-color: rgb(255, 192, 0); color: rgb(255, 255, 255);&apos;&gt;背景色&lt;/span&gt;、以及字号&lt;span style=&apos;font-size: 20px;&apos;&gt;大&lt;/span&gt;&lt;span style=&apos;font-size: 14px;&apos;&gt;小&lt;/span&gt;等简单排版操作。&lt;/p&gt;&lt;p&gt;还可以在这里加入表格了&lt;/p&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td width=&apos;93&apos; valign=&apos;top&apos; style=&apos;word-break: break-all;&apos;&gt;中奖客户&lt;/td&gt;&lt;td width=&apos;93&apos; valign=&apos;top&apos; style=&apos;word-break: break-all;&apos;&gt;发放奖品&lt;/td&gt;&lt;td width=&apos;93&apos; valign=&apos;top&apos; style=&apos;word-break: break-all;&apos;&gt;备注&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width=&apos;93&apos; valign=&apos;top&apos; style=&apos;word-break: break-all;&apos;&gt;猪猪&lt;/td&gt;&lt;td width=&apos;93&apos; valign=&apos;top&apos; style=&apos;word-break: break-all;&apos;&gt;内测码&lt;/td&gt;&lt;td width=&apos;93&apos; valign=&apos;top&apos; style=&apos;word-break: break-all;&apos;&gt;&lt;em&gt;&lt;span style=&apos;color: rgb(255, 0, 0);&apos;&gt;已经发放&lt;/span&gt;&lt;/em&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width=&apos;93&apos; valign=&apos;top&apos; style=&apos;word-break: break-all;&apos;&gt;大麦&lt;/td&gt;&lt;td width=&apos;93&apos; valign=&apos;top&apos; style=&apos;word-break: break-all;&apos;&gt;积分&lt;/td&gt;&lt;td width=&apos;93&apos; valign=&apos;top&apos; style=&apos;word-break: break-all;&apos;&gt;&lt;a href=&apos;javascript: void(0);&apos; target=&apos;_blank&apos;&gt;领取地址&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p style=&apos;text-align: left;&apos;&gt;&lt;span style=&apos;text-align: left;&apos;&gt;也可在这里插入图片、并对图片加上超级链接，方便用户点击。&lt;/span&gt;&lt;/p&gt;&quot;</span><br><span class="line">        $(&quot;.wb_txt&quot;).html(a);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        $(&quot;.wb_txt&quot;).html(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="确保jQuery库与其它库不发生冲突"><a href="#确保jQuery库与其它库不发生冲突" class="headerlink" title="确保jQuery库与其它库不发生冲突"></a>确保jQuery库与其它库不发生冲突</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(function($)&#123;				//定义匿名函数并设置形参为$</span><br><span class="line">	$(function()&#123;			//匿名函数内部的$均为jQuery</span><br><span class="line">		$(&quot;p&quot;).click(function()&#123;	//继续使用$()方法</span><br><span class="line">			alert($(this).text());</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;)(jQuery);					//执行匿名函数且传递实参jQuery</span><br><span class="line"></span><br><span class="line">$(&quot;pp&quot;).style.display = &apos;none&apos;;		//使用其它js库</span><br></pre></td></tr></table></figure>
+<h3 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;.tb2 &gt; tbody &gt; tr&apos;).click(function()&#123;</span><br><span class="line">	//正常思路</span><br><span class="line">	if($(this).hasClass(&apos;selected&apos;))&#123;</span><br><span class="line">		$(this)</span><br><span class="line">			.removeClass(&apos;selected&apos;)</span><br><span class="line">			.find(&apos;:checkbox&apos;).attr(&apos;checked&apos;,&apos;checked&apos;).prop(&apos;checked&apos;,false);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		$(this)</span><br><span class="line">			.addClass(&apos;selected&apos;)</span><br><span class="line">			.find(&apos;:checkbox&apos;).attr(&apos;checked&apos;,&apos;&apos;).prop(&apos;checked&apos;,true);</span><br><span class="line">	&#125;</span><br><span class="line">	//三元运算符</span><br><span class="line">	var hasSelected = $(this).hasClass(&apos;selected&apos;);</span><br><span class="line">	$(this)</span><br><span class="line">		[hasSelected?&quot;removeClass&quot;:&quot;addClass&quot;](&apos;selected&apos;)	//三元运算符</span><br><span class="line">		.find(&apos;:checkbox&apos;).attr(&apos;checked&apos;,!hasSelected).prop(&apos;checked&apos;,!hasSelected);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="简单的轮播图原理"><a href="#简单的轮播图原理" class="headerlink" title="简单的轮播图原理"></a>简单的轮播图原理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">var silde = &#123;</span><br><span class="line">	init:function()&#123;</span><br><span class="line">		this.auto();</span><br><span class="line">	&#125;,</span><br><span class="line">	auto:function()&#123;</span><br><span class="line">		var _root = this,</span><br><span class="line">			$ul = $(&quot;#sidle&quot;).find(&quot;ul&quot;),</span><br><span class="line">			$lis = $ul.children(&quot;li&quot;),</span><br><span class="line">			width = $lis.eq(0).width();</span><br><span class="line">		setInterval(function()&#123;</span><br><span class="line">			$ul.animate(&#123;</span><br><span class="line">				&apos;margin-left&apos;:&apos;-&apos; + width + &apos;px&apos;</span><br><span class="line">			&#125;,</span><br><span class="line">			&apos;slow&apos;,</span><br><span class="line">			function()&#123;</span><br><span class="line">				//此处保证轮播循环</span><br><span class="line">				//将已经轮播过的节点的第一张图片添加到末尾的位置</span><br><span class="line">				//再将margin-left重置为0px;</span><br><span class="line">				//这样就能一直的循环下去。</span><br><span class="line">				$ul.css(&#123;&apos;margin-left&apos;:0&#125;)</span><br><span class="line">					.children(&apos;li&apos;)</span><br><span class="line">					.last()</span><br><span class="line">					.after(</span><br><span class="line">						$ul.children(&apos;li&apos;).first()</span><br><span class="line">					);</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;,2000</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">silde.init();</span><br></pre></td></tr></table></figure>
+<h3 id="JS设置cookie，删除cookie"><a href="#JS设置cookie，删除cookie" class="headerlink" title="JS设置cookie，删除cookie"></a>JS设置cookie，删除cookie</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">//页面一</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;ex7&lt;/title&gt;</span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">* &#123;margin:0&#125;</span><br><span class="line">body &#123;text-align:center;min-width:760px&#125;</span><br><span class="line">div &#123;padding:3px 3px 3px 3px&#125;</span><br><span class="line">#main &#123;width:720px;margin:0 auto;text-align:left;margin-top:30px&#125;</span><br><span class="line">#main div span &#123;width:50px&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">/***</span><br><span class="line">* @param &#123;string&#125; cookieName Cookie名称</span><br><span class="line">* @param &#123;string&#125; cookieValue Cookie值</span><br><span class="line">* @param &#123;number&#125; nDays Cookie过期天数</span><br><span class="line">*/</span><br><span class="line">function SetCookie(cookieName,cookieValue,nDays) &#123;</span><br><span class="line">    /*当前日期*/</span><br><span class="line">    var today = new Date();</span><br><span class="line">    /*Cookie过期时间*/</span><br><span class="line">    var expire = new Date();</span><br><span class="line">    /*如果未设置nDays参数或者nDays为0，取默认值1*/</span><br><span class="line">    if(nDays == null || nDays == 0) nDays = 1;</span><br><span class="line">    /*计算Cookie过期时间*/</span><br><span class="line">    expire.setTime(today.getTime() + 3600000 * 24 * nDays);</span><br><span class="line">    /*设置Cookie值*/</span><br><span class="line">    document.cookie = cookieName + &quot;=&quot; + escape(cookieValue)</span><br><span class="line">        + &quot;;expires=&quot; + expire.toGMTString();</span><br><span class="line">&#125;</span><br><span class="line">function login() &#123;</span><br><span class="line">    var username = $(&quot;user&quot;).value;</span><br><span class="line">    var password = $(&quot;pass&quot;).value;</span><br><span class="line">    /*是否选中7天内无需登录*/</span><br><span class="line">    var save = $(&quot;save&quot;).checked;</span><br><span class="line">    if(username==&quot;sww&quot; &amp;&amp; password==&quot;sww&quot;) &#123;</span><br><span class="line">        if(save) SetCookie(&quot;username&quot;,username,7);</span><br><span class="line">        else SetCookie(&quot;username&quot;,username,1);</span><br><span class="line">        /*跳转到ex8.html页面*/</span><br><span class="line">        document.location = &quot;ex8.html&quot;;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        alert(&quot;用户名或密码错误！&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">function $(id) &#123;</span><br><span class="line">    return document.getElementById(id);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;main&quot;&gt;</span><br><span class="line">        &lt;div&gt;&lt;span&gt;用户名：&lt;/span&gt;&lt;input type=&quot;text&quot; id=&quot;user&quot; /&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;&lt;span&gt;密码：&lt;/span&gt;&lt;input type=&quot;password&quot; id=&quot;pass&quot; /&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;input type=&quot;checkbox&quot; id=&quot;save&quot; /&gt;</span><br><span class="line">            7天内无需登录</span><br><span class="line">            &lt;input type=&quot;button&quot; onclick=&quot;login()&quot; value=&quot;登录&quot; /&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line">//页面二</span><br><span class="line">代码</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;ex8&lt;/title&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">/***</span><br><span class="line">*读取指定的Cookie值</span><br><span class="line">*@param &#123;string&#125; cookieName Cookie名称</span><br><span class="line">*/</span><br><span class="line">function ReadCookie(cookieName) &#123;</span><br><span class="line">    var theCookie = &quot;&quot; + document.cookie;</span><br><span class="line">    var ind = theCookie.indexOf(cookieName);</span><br><span class="line">    if(ind==-1 || cookieName==&quot;&quot;) return &quot;&quot;;</span><br><span class="line">    var ind1 = theCookie.indexOf(&apos;;&apos;,ind);</span><br><span class="line">    if(ind1==-1) ind1 = theCookie.length;</span><br><span class="line">    /*读取Cookie值*/</span><br><span class="line">    return unescape(theCookie.substring(ind+cookieName.length+1,ind1));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function $(id) &#123;</span><br><span class="line">    return document.getElementById(id);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function init() &#123;</span><br><span class="line">    var username = ReadCookie(&quot;username&quot;);</span><br><span class="line">    if(username &amp;&amp; username.length&gt;0) &#123;</span><br><span class="line">        $(&quot;msg&quot;).innerHTML = &quot;&lt;h1&gt;欢迎光临,&quot; + username + &quot;!&lt;/h1&gt;&quot;;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        $(&quot;msg&quot;).innerHTML = &quot;&lt;a href=&apos;ex7.html&apos;&gt;请登录&lt;/a&gt;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body onload=&quot;init()&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;msg&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="仿猎聘网JQ代码片段"><a href="#仿猎聘网JQ代码片段" class="headerlink" title="仿猎聘网JQ代码片段"></a>仿猎聘网JQ代码片段</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">//三元运算符</span><br><span class="line">$(&quot;.change-city&quot;).on(&quot;click&quot;,function()&#123;</span><br><span class="line">	$(this).hasClass(&quot;active&quot;)?($(this).removeClass(&quot;active&quot;),$(&quot;#header-index .header-city-select&quot;).animate(&#123;top:0&#125;,200)):($(this).addClass(&quot;active&quot;),$(&quot;#header-index .header-city-select&quot;).animate(&#123;top:&quot;50px&quot;&#125;,200))</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//鼠标移入移出事件,仿hover</span><br><span class="line">$(&quot;.drop-menu-group&quot;).mouseenter(function()&#123;</span><br><span class="line">&#125;).mouseleave(function()&#123;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//单个按钮，全选/取消全选</span><br><span class="line">var $input = $(&quot;.item-list input[type=checkbox]&quot;);</span><br><span class="line">var ary = new Array();</span><br><span class="line">$input.change(function()&#123;</span><br><span class="line">	if($(this).is(&quot;:checked&quot;))&#123;</span><br><span class="line">		$(this).attr(&quot;i&quot;,&quot;0&quot;);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		$(this).removeAttr(&quot;i&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	$input.each(function()&#123;</span><br><span class="line">		if($(&quot;[i=0]&quot;).length &gt;= 3)&#123;</span><br><span class="line">			if($(this).attr(&quot;i&quot;) != 0)&#123;</span><br><span class="line">				$(this).attr(&quot;disabled&quot;,true);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			$input.each(function()&#123;</span><br><span class="line">				if($(this).attr(&quot;i&quot;) != 0)&#123;</span><br><span class="line">					$(this).removeAttr(&quot;disabled&quot;);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//循环DIV</span><br><span class="line">function loop(a,b,c)&#123;</span><br><span class="line">	for(var i=0;i&lt;c;i++)&#123;</span><br><span class="line">		$(a).append($(b).eq(0).clone(true))</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="（字体-高度）增大变小"><a href="#（字体-高度）增大变小" class="headerlink" title="（字体/高度）增大变小"></a>（字体/高度）增大变小</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">var $comment = $(&quot;#comment&quot;);</span><br><span class="line"></span><br><span class="line">$(&quot;.biggerHeight&quot;).click(function()&#123;</span><br><span class="line">	if(!$comment.is(&quot;:animated&quot;))&#123;</span><br><span class="line">		if($comment.height() &lt; 500)&#123;</span><br><span class="line">			$comment.animate(&#123;height : &quot;+=50&quot;&#125;,400);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line">$(&quot;.smallerHeight&quot;).click(function()&#123;</span><br><span class="line">	if(!$comment.is(&quot;:animated&quot;))&#123;</span><br><span class="line">		if($comment.height() &gt; 50)&#123;</span><br><span class="line">			$comment.animate(&#123;height : &quot;-=50&quot;&#125;,400);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//字体放大缩小</span><br><span class="line">$(&quot;.msg_caption span&quot;).click(function()&#123;</span><br><span class="line">	var thisEle = $(&quot;#para&quot;).css(&quot;font-size&quot;);	//获取字体大小</span><br><span class="line">	var textFontSize = parseInt(thisEle,10)		//把获取的12px转换成数字类型12，10进制</span><br><span class="line">	var unit = thisEle.slice(-2);				//获取单位，px,em均为后两位</span><br><span class="line">	var cName = $(this).attr(&quot;class&quot;);</span><br><span class="line">	</span><br><span class="line">	if(cName == &quot;biggerSize&quot;)&#123;</span><br><span class="line">		if(textFontSize &lt; 22)&#123;</span><br><span class="line">			textFontSize +=2;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;else if(cName == &quot;smallerSize&quot;)&#123;</span><br><span class="line">		if(textFontSize &gt; 12)&#123;</span><br><span class="line">			textFontSize -=2;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	$(&quot;#para&quot;).css(&quot;font-size&quot;,textFontSize+unit);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="根据滚动条高度隐藏-显示（返回顶部）"><a href="#根据滚动条高度隐藏-显示（返回顶部）" class="headerlink" title="根据滚动条高度隐藏/显示（返回顶部）"></a>根据滚动条高度隐藏/显示（返回顶部）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//按钮绑定事件</span><br><span class="line">$(&apos;#backTop&apos;).on(&apos;click&apos;,go);</span><br><span class="line"></span><br><span class="line">//滚动条事件</span><br><span class="line">$(window).on(&apos;scroll&apos;,function()&#123;</span><br><span class="line">	checkPosition($(window).height()-200);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//返回顶部</span><br><span class="line">function go()&#123;</span><br><span class="line">	$(&apos;html,body&apos;).animate(&#123;scrollTop:0&#125;,800);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//检查滚动条位置</span><br><span class="line">function checkPosition(pos)&#123;</span><br><span class="line">	if($(window).scrollTop() &gt; pos)&#123;</span><br><span class="line">		$(&apos;#backTop&apos;).fadeIn();</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		$(&apos;#backTop&apos;).fadeOut();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//初始化检查</span><br><span class="line">checkPosition($(window).height()-100);</span><br></pre></td></tr></table></figure>
+<h3 id="向未来的元素添加事件处理程序"><a href="#向未来的元素添加事件处理程序" class="headerlink" title="向未来的元素添加事件处理程序"></a>向未来的元素添加事件处理程序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// delegate() 方法为指定的元素（属于被选元素的子元素）添加一个或多个事件处理程序，并规定当这些事件发生时运行的函数。</span><br><span class="line">// 使用</span><br><span class="line">// delegate() 方法的事件处理程序适用于当前或未来的元素（比如由脚本创建的新元素）。</span><br><span class="line"></span><br><span class="line">$(document).ready(function()&#123;</span><br><span class="line">  $(&quot;div&quot;).delegate(&quot;p&quot;,&quot;click&quot;,function()&#123;</span><br><span class="line">    $(this).slideToggle();</span><br><span class="line">  &#125;);</span><br><span class="line">  $(&quot;button&quot;).click(function()&#123;</span><br><span class="line">    $(&quot;&lt;p&gt;这是一个新段落。&lt;/p&gt;&quot;).insertAfter(&quot;button&quot;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// live() 方法为被选元素附加一个或多个事件处理程序，并规定当这些事件发生时运行的函数。</span><br><span class="line"></span><br><span class="line">// 通过 live() 方法附加的事件处理程序适用于匹配选择器的当前及未来的元素（比如由脚本创建的新元素）。</span><br><span class="line">$(document).ready(function()&#123;</span><br><span class="line">  $(&quot;p&quot;).live(&quot;click&quot;,function()&#123;</span><br><span class="line">    $(this).slideToggle();</span><br><span class="line">  &#125;);</span><br><span class="line">  $(&quot;button&quot;).click(function()&#123;</span><br><span class="line">    $(&quot;&lt;p&gt;This is a new paragraph.&lt;/p&gt;&quot;).insertAfter(&quot;button&quot;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="文字闪烁效果"><a href="#文字闪烁效果" class="headerlink" title="文字闪烁效果"></a>文字闪烁效果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;</span><br><span class="line">    function textFlash(obj,cssName,times)&#123;</span><br><span class="line">    	var i=0,</span><br><span class="line">    		t=false,</span><br><span class="line">    		o=obj.attr(&quot;class&quot;),</span><br><span class="line">    		c=&quot;&quot;,</span><br><span class="line">    		times=times||2;			//如果没有设置闪烁次数，就默认为2次</span><br><span class="line">    	if(t) return;</span><br><span class="line">    	t=setInterval(function()&#123;  //实现闪烁功能，通过setInterval()方法不停执行函数</span><br><span class="line">    		i++;					//i不断累加</span><br><span class="line">    		c=i%2?o+cssName:o;		//通过（i%2）切换class</span><br><span class="line">    		obj.attr(&quot;class&quot;,c);	//设置class来改变文本颜色</span><br><span class="line">    		if (i==2*times) &#123;		//闪烁过程是一红一黑两个步骤，所以闪烁3次即切换2*3=6次</span><br><span class="line">    			clearInterval(t);	//清楚闪烁功能，即清除setInterval()方法</span><br><span class="line">    			obj.removeClass(cssName);	//恢复最初始颜色</span><br><span class="line">    		&#125;;</span><br><span class="line">    	&#125;,200);</span><br><span class="line">    &#125;;</span><br><span class="line">    $(function()&#123;</span><br><span class="line">    	//自动闪烁文本</span><br><span class="line">    	textFlash($(&quot;#id-div-autoFlash&quot;),&quot;red&quot;,3);</span><br><span class="line">    	//单机闪动文本</span><br><span class="line">    	$(&quot;#id-div-clickFlash&quot;).bind(&#123;</span><br><span class="line">    		click:function()&#123;</span><br><span class="line">    			textFlash($(this),&quot;red&quot;,3);</span><br><span class="line">    			return false;</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;);</span><br><span class="line">    	//通过 E-mail 格式校验闪动文本</span><br><span class="line">    	$(&quot;#id-input-emailFlash&quot;).blur(function()&#123;</span><br><span class="line">    		//使用正则表达式校验 E-mail 格式字符串</span><br><span class="line">    		if(/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test($(this).val()))&#123;</span><br><span class="line">    			textFlash($(this),&quot;red&quot;,3);</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">/*</span><br><span class="line">.cssFlashred&#123;color: red;&#125;</span><br><span class="line"></span><br><span class="line">&lt;div id=&quot;id-div-autoFlash&quot; class=&quot;cssFlash&quot;&gt;文本自动闪烁&lt;/div&gt;</span><br><span class="line">&lt;div id=&quot;id-div-clickFlash&quot; class=&quot;cssFlash&quot;&gt;单机文本闪烁&lt;/div&gt;</span><br><span class="line">&lt;input id=&quot;id-input-emailFlash&quot; class=&quot;cssFlash&quot; type=&quot;email&quot; placeholder=&quot;如果输入email地址会闪动&quot; /&gt;</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<h3 id="jQuery页面加载后居中显示消息框的方法"><a href="#jQuery页面加载后居中显示消息框的方法" class="headerlink" title="jQuery页面加载后居中显示消息框的方法"></a>jQuery页面加载后居中显示消息框的方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">function center(obj)&#123;</span><br><span class="line">	$.center=function(obj)&#123;</span><br><span class="line">		var screenWidth=$(window).width();	//当前浏览器窗口的宽度</span><br><span class="line">		var screenHeight=$(window).height();	//当前浏览器窗口的高度</span><br><span class="line">		var scrolltop=$(document).scrollTop();	//获取当前窗口距离页面顶部高度</span><br><span class="line">		var objLeft=(screenWidth-obj.width())/2;	</span><br><span class="line">		var objTop=(screenHeight-obj.height())/2+scrolltop;</span><br><span class="line">		obj.css(&#123;</span><br><span class="line">			left:objLeft + &apos;px&apos;,</span><br><span class="line">			top:objTop + &apos;px&apos;,</span><br><span class="line">			display:&apos;block&apos;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	$.center(obj);</span><br><span class="line">	</span><br><span class="line">	$(window).resize(function()&#123;</span><br><span class="line">		$.center(obj);</span><br><span class="line">	&#125;);</span><br><span class="line">	$(window).scroll(function()&#123;</span><br><span class="line">		$.center(obj);</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="兼容click和tap事件"><a href="#兼容click和tap事件" class="headerlink" title="兼容click和tap事件"></a>兼容click和tap事件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//兼容click和tap事件, 调用时用$(selector).on(CLICK,fn);</span><br><span class="line">var UA = window.navigator.userAgent;</span><br><span class="line">var CLICK = &apos;click&apos;;</span><br><span class="line">if(/iPad|iPhone|Android/.test(UA))&#123;</span><br><span class="line">    CLICK = &apos;tap&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="js防止脚本注入"><a href="#js防止脚本注入" class="headerlink" title="js防止脚本注入"></a>js防止脚本注入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">function html_encode(str) &#123;</span><br><span class="line">    var s = &quot;&quot;;</span><br><span class="line">    if (str.length == 0) return &quot;&quot;;</span><br><span class="line">    s = str.replace(/&lt;/g, &quot;&amp;lt;&quot;);</span><br><span class="line">    s = s.replace(/&gt;/g, &quot;&amp;gt;&quot;);</span><br><span class="line">    s = s.replace(/ /g, &quot;&amp;nbsp;&quot;);</span><br><span class="line">    s = s.replace(/\&apos;/g, &quot;&amp;#39;&quot;);</span><br><span class="line">    s = s.replace(/\&quot;/g, &quot;&amp;quot;&quot;);</span><br><span class="line">    s = s.replace(/\n/g, &quot;&lt;br&gt;&quot;);</span><br><span class="line">    return s;</span><br><span class="line">&#125;</span><br><span class="line">function encode_html(str) &#123;</span><br><span class="line">    var s = &quot;&quot;;</span><br><span class="line">    if (str.length == 0) return &quot;&quot;;</span><br><span class="line">    s = str.replace(/&amp;lt;/g, &quot;&lt;&quot;);</span><br><span class="line">    s = s.replace(/&amp;gt;/g, &quot;&gt;&quot;);</span><br><span class="line">    s = s.replace(/&amp;nbsp;/g, &quot; &quot;);</span><br><span class="line">    s = s.replace(/&amp;#39;/g, &quot;\&apos;&quot;);</span><br><span class="line">    s = s.replace(/&amp;quot;/g, &apos;\&quot;&apos;);</span><br><span class="line">    s = s.replace(/&lt;br&gt;/g, &quot;\n&quot;);</span><br><span class="line">    return s;</span><br><span class="line">&#125;</span><br><span class="line">$(function () &#123;</span><br><span class="line">    $(&quot;input,textarea&quot;).each(function () &#123;</span><br><span class="line">        $(this).blur(function () &#123;</span><br><span class="line">            var str = $(this).val();</span><br><span class="line">            $(this).val(html_encode(str));</span><br><span class="line">        &#125;).focus(function () &#123;</span><br><span class="line">            var str = $(this).val();</span><br><span class="line">            $(this).val(encode_html(str));</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="绑定事件，传递数据"><a href="#绑定事件，传递数据" class="headerlink" title="绑定事件，传递数据"></a>绑定事件，传递数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(function()&#123;</span><br><span class="line">    $(&quot;#id&quot;).bind(&apos;click&apos;,&#123;d1:&apos;Jquery:&apos;,d2:&apos;将事件和函数绑定到元素&apos;&#125;,myBindFunc(e));</span><br><span class="line">&#125;)</span><br><span class="line">function myBindFunc(e)&#123;</span><br><span class="line">    $(&quot;#div-log&quot;).html($(&quot;#div-log&quot;).html+&quot;&lt;p&gt;&quot;+e.data.d1+e.data.d2+&quot;&lt;/p&gt;&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="DIY手机端商城主页代码片段（jquery一些操作）"><a href="#DIY手机端商城主页代码片段（jquery一些操作）" class="headerlink" title="DIY手机端商城主页代码片段（jquery一些操作）"></a>DIY手机端商城主页代码片段（jquery一些操作）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">//当前元素定位</span><br><span class="line">function pos(e)&#123;</span><br><span class="line">	//查询当前模块所处页面位置，设置模块属性位置</span><br><span class="line">	var y = $(e).offset().top;</span><br><span class="line">	var x = $(e).offset().left;</span><br><span class="line">	$(e).css(&quot;top&quot;,y);</span><br><span class="line">	$(e).css(&quot;left&quot;,x);</span><br><span class="line">	$(&quot;html,body&quot;).animate(&#123;scrollTop:y&#125;,0);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//图片上传后图显示</span><br><span class="line">&lt;img id=&quot;img_Photo&quot; src=&quot;&quot; /&gt;</span><br><span class="line">&lt;input type=&quot;file&quot; onchange=&quot;onChangeFile(this)&quot; /&gt;</span><br><span class="line">function onChangeFile(sender)&#123;</span><br><span class="line">    var filename = sender.value;</span><br><span class="line">    if (filename == &quot;&quot;) &#123;</span><br><span class="line">        return &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    var ExName = filename.substr(filename.lastIndexOf(&quot;.&quot;) + 1).toUpperCase();</span><br><span class="line">    if (ExName == &quot;JPG&quot; || ExName == &quot;BMP&quot; || ExName == &quot;GIF&quot; || ExName == &quot;PNG&quot;) &#123;</span><br><span class="line">    	//店招图片</span><br><span class="line">     	document.getElementById(&quot;img_Photo&quot;).src = window.URL.createObjectURL(sender.files[0]);</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        alert(&apos;请选择正确的图片格式！&apos;);</span><br><span class="line">        sender.value = null;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//rgb(10进制)转#fff(16进制)的方法</span><br><span class="line">function RGBToHex(rgb) &#123;</span><br><span class="line">    var regexp = /^rgb\(([0-9]&#123;0,3&#125;)\,\s([0-9]&#123;0,3&#125;)\,\s([0-9]&#123;0,3&#125;)\)/g;</span><br><span class="line">    var re = rgb.replace(regexp, &quot;$1 $2 $3&quot;).split(&quot; &quot;);//利用正则表达式去掉多余的部分</span><br><span class="line">    var hexColor = &quot;#&quot;;</span><br><span class="line">    var hex = [&apos;0&apos;, &apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;, &apos;6&apos;, &apos;7&apos;, &apos;8&apos;, &apos;9&apos;, &apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;, &apos;E&apos;, &apos;F&apos;];</span><br><span class="line">    for (var i = 0; i &lt; 3; i++) &#123;</span><br><span class="line">        var r = null;</span><br><span class="line">        var c = re[i];</span><br><span class="line">        var hexAr = [];</span><br><span class="line">        while (c &gt; 16) &#123;</span><br><span class="line">            r = c % 16;</span><br><span class="line">            c = (c / 16) &gt;&gt; 0;</span><br><span class="line">            hexAr.push(hex[r]);</span><br><span class="line">        &#125;</span><br><span class="line">        hexAr.push(hex[c]);</span><br><span class="line">        hexColor += hexAr.reverse().join(&apos;&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">    return hexColor;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//URL地址选取（爽爽挝咖）</span><br><span class="line">var string = window.location.href;//获取url地址</span><br><span class="line">var index = string.indexOf(&quot;=&quot;);//indexOf()返回字符串指定出现的位置</span><br><span class="line">var str = string.substring(index + 1, string.length);//substring()方法用于提取字符串中介于两个指定下标之间的字符。</span><br><span class="line">var num = str.replace(/[^0-9]/ig, &quot;&quot;); //从字符串中取数字</span><br></pre></td></tr></table></figure>
+<h3 id="1元购代码片段"><a href="#1元购代码片段" class="headerlink" title="1元购代码片段"></a>1元购代码片段</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var hotQuestion = document.getElementById(&quot;hotQuestion&quot;);</span><br><span class="line">var list = hotQuestion.getElementsByTagName(&quot;li&quot;);</span><br><span class="line">for(var i=0;i&lt;list.length;i++)&#123;</span><br><span class="line">	list[i].onclick = function(k)&#123;</span><br><span class="line">		return function()&#123;</span><br><span class="line">            for(var i=0;i&lt;list.length;i++)&#123;</span><br><span class="line">	    		var curLi = list[i];</span><br><span class="line">	    		    div = $api.last(curLi, &apos;div&apos;),</span><br><span class="line">	    			span = $api.first(curLi, &apos;span&apos;);</span><br><span class="line">	    		if(i==k)&#123;</span><br><span class="line">	    			$api.attr(div, &apos;style&apos;, &apos;display:block&apos;);</span><br><span class="line">		    		$api.addCls(span, &apos;rotation&apos;);</span><br><span class="line">	    		&#125;else&#123;</span><br><span class="line">		    		$api.attr(div, &apos;style&apos;, &apos;display:none&apos;);</span><br><span class="line">		    		$api.removeCls(span, &apos;rotation&apos;);</span><br><span class="line">	    		&#125;</span><br><span class="line">	    	&#125;</span><br><span class="line">        &#125;;</span><br><span class="line">	&#125;(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="倒计时和累加时间"><a href="#倒计时和累加时间" class="headerlink" title="倒计时和累加时间"></a>倒计时和累加时间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line">//倒计时</span><br><span class="line">startTimeOut = function ($this, currMS, type) &#123;</span><br><span class="line">	var m = 0;//分钟</span><br><span class="line">	var s = 0;//秒</span><br><span class="line">	var o = 0;//毫秒</span><br><span class="line">	var i = 0;//计数器</span><br><span class="line">	var v;		//时钟对象</span><br><span class="line"></span><br><span class="line">	//var currTime = new Date();</span><br><span class="line">	//var endTime = new Date();</span><br><span class="line">	//endTime.setSeconds(endTime.getSeconds() + currMS/1000 - 1);</span><br><span class="line">    //var w = parseInt((endTime.getTime() - currTime.getTime()) / 1000);</span><br><span class="line">	var w = currMS/1000;</span><br><span class="line">	if (w &lt; 0)</span><br><span class="line">		return;</span><br><span class="line">	m = parseInt(w / 60);</span><br><span class="line">	s = parseInt(w % 60);</span><br><span class="line">	o = (w == 0) ? currMS : 99;</span><br><span class="line">	this.countdown = function () &#123;</span><br><span class="line">		v = setInterval(function() &#123;</span><br><span class="line">		    i++;</span><br><span class="line">		    if (type == &quot;singleLottery&quot; &amp;&amp; $(&quot;#singleLottery&quot;).attr(&quot;style&quot;).indexOf(&quot;top:0&quot;)&lt;0) &#123;</span><br><span class="line">		        $(&quot;#singleLottery&quot;).attr(&quot;style&quot;, &quot;top:0;position:relative;padding:0;margin:0;&quot;);//将滚动条还原到第一行,此处避免滚动中的回零失效问题</span><br><span class="line">		    &#125;</span><br><span class="line">			if (m &lt;= 0 &amp;&amp; s &lt;= 0 &amp;&amp; o &lt;= 0) &#123;</span><br><span class="line">			    //开始揭晓 spanTime1</span><br><span class="line">			    clearInterval(v);</span><br><span class="line">			    refreshLottery($this,type);</span><br><span class="line">				return;</span><br><span class="line">			&#125;</span><br><span class="line">			o = o - Math.round(Math.random() * 19 + 1);</span><br><span class="line"></span><br><span class="line">			if (i &gt;= 5) &#123;</span><br><span class="line">				i = 0;</span><br><span class="line">				//Math.round(Math.random()*9+1);</span><br><span class="line">				s = s - 1;</span><br><span class="line">				/*if (s == 0 &amp;&amp; m &gt; 0)</span><br><span class="line">					m = m - 1;</span><br><span class="line">				else if (s &lt; 0 &amp;&amp; m &gt; 0)</span><br><span class="line">					s = 59;*/</span><br><span class="line">				if (s &lt;= 0 &amp;&amp; m &gt; 0) &#123;</span><br><span class="line">				    s = 59;</span><br><span class="line">				    m = m - 1;</span><br><span class="line">				&#125;</span><br><span class="line">				if (m &lt;= 0 &amp;&amp; s &lt;= 0)</span><br><span class="line">					o = 0;</span><br><span class="line">				if (m &gt; 0 || s &gt; 0)</span><br><span class="line">					o = 99;</span><br><span class="line">			&#125;</span><br><span class="line">			if (m &lt;= 0) m = 0;</span><br><span class="line">			if (s &lt;= 0) s = 0;</span><br><span class="line"></span><br><span class="line">			var mStr = m &lt; 10 ? (&apos;0&apos; + m) : m;</span><br><span class="line">			var sStr = s &lt; 10 ? (&apos;0&apos; + s) : s;</span><br><span class="line">			var oStr = o &lt; 10 ? (&apos;0&apos; + o) : o;</span><br><span class="line">			$this.html(mStr + &quot;:&quot; + sStr + &quot;:&quot; + oStr);</span><br><span class="line">		&#125;, 200);</span><br><span class="line">		timer.push(v);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//时间累加计算方法 2017-01-09 16:45 Jesse</span><br><span class="line">function HaveOrderTime(timeBox,currMS) &#123;</span><br><span class="line">	var d,h,m,s;</span><br><span class="line">	var AS = parseInt(currMS / 1000);</span><br><span class="line">	if(AS &gt; 0)&#123;</span><br><span class="line">		if(AS &gt; 59)&#123;//秒</span><br><span class="line">			if(parseInt(AS / 60) &gt; 59)&#123;//分</span><br><span class="line">				if(parseInt(AS / 3600) &gt; 24)&#123;//小时</span><br><span class="line">					s=parseInt(AS % 86400 % 3600 % 60);</span><br><span class="line">					m=parseInt(AS % 86400 % 3600 / 60);</span><br><span class="line">					h=parseInt(AS % 86400 / 3600);</span><br><span class="line">					d=parseInt(AS / 86400);</span><br><span class="line">				&#125;else&#123;</span><br><span class="line">					s=parseInt(AS  % 3600 % 60);</span><br><span class="line">					m=parseInt(AS % 3600 / 60);</span><br><span class="line">					h=parseInt(AS / 3600);</span><br><span class="line">					d=0;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				s=parseInt(AS % 60);</span><br><span class="line">				m=parseInt(AS / 60);</span><br><span class="line">				d=h=0;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			s = AS;</span><br><span class="line">			d=h=m=0;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(d+&apos;,&apos;+h+&apos;,&apos;+m+&apos;,&apos;+s);</span><br><span class="line">	setInterval(function() &#123;</span><br><span class="line">	    s++;</span><br><span class="line">	    if(s &gt; 59)&#123;</span><br><span class="line">	    	if(m+1&gt;59)&#123;</span><br><span class="line">	    		if(h+1&gt;24)&#123;</span><br><span class="line">	    			d++;</span><br><span class="line">	    			h=m=s=0;</span><br><span class="line">	    		&#125;else&#123;</span><br><span class="line">	    			h++;</span><br><span class="line">	    			m=s=0;</span><br><span class="line">	    		&#125;</span><br><span class="line">	    	&#125;else&#123;</span><br><span class="line">	    		m++;</span><br><span class="line">	    		s=0;</span><br><span class="line">	    	&#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	    var txt=dStr=hStr=mStr=sStr=&apos;&apos;;</span><br><span class="line">    	if(s&gt;0)sStr =s+&apos;秒&apos;;</span><br><span class="line">    	if(m&gt;0)mStr =m+&apos;分&apos;;</span><br><span class="line">    	if(h&gt;0)hStr =h+&apos;小时&apos;;</span><br><span class="line">    	if(d&gt;0)dStr =d+&apos;天&apos;;</span><br><span class="line">	    </span><br><span class="line">	    timeBox.textContent = dStr+hStr+mStr+sStr;</span><br><span class="line">	&#125;, 1000);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="募才网移动端表单验证"><a href="#募才网移动端表单验证" class="headerlink" title="募才网移动端表单验证"></a>募才网移动端表单验证</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;input[type=text]&quot;).focus(function () &#123;</span><br><span class="line">    $(this).prev(&quot;p&quot;).find(&quot;span&quot;).text(&quot;&quot;);</span><br><span class="line">&#125;)</span><br><span class="line">var flag;</span><br><span class="line">var pat = new RegExp(&quot;^[A-Za-z0-9]+$&quot;);</span><br><span class="line">function check() &#123;</span><br><span class="line">    flag = true;</span><br><span class="line">    var password = $(&quot;#TextBox2&quot;).val().trim();</span><br><span class="line">    var comfirm = $(&quot;#TextBox3&quot;).val().trim();</span><br><span class="line">    checkIt(&quot;#TextBox1&quot;, &apos;请输入至少 6 位的用户名&apos;, &apos;用户名由字母、数字组成&apos;);</span><br><span class="line">    checkIt(&quot;#TextBox2&quot;, &apos;请输入至少 6 位的密码&apos;, &apos;密码由字母、数字组成&apos;);</span><br><span class="line">    if ($(&quot;#txtt&quot;).val() == &quot;2&quot;) &#123;</span><br><span class="line">        if (comfirm == &quot;&quot;) &#123;</span><br><span class="line">            $(&quot;#TextBox3&quot;).prev(&quot;p&quot;).find(&quot;span&quot;).text(&quot;确认密码不能为空&quot;);</span><br><span class="line">            flag = false;</span><br><span class="line">        &#125; else if (comfirm != password) &#123;</span><br><span class="line">            $(&quot;#TextBox3&quot;).prev(&quot;p&quot;).find(&quot;span&quot;).text(&quot;两次密码输入不一致&quot;);</span><br><span class="line">            flag = false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return flag;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function checkIt(id, msg1, msg2) &#123;</span><br><span class="line">    var val = $(id).val().trim();</span><br><span class="line">    if (val == &quot;&quot; || val.length &lt; 6) &#123;</span><br><span class="line">        var errorMsg = msg1;</span><br><span class="line">        flag = false;</span><br><span class="line">    &#125; else if (!pat.test(val)) &#123;</span><br><span class="line">        var errorMsg = msg2;</span><br><span class="line">        flag = false;</span><br><span class="line">    &#125;</span><br><span class="line">    if (flag == false) &#123;</span><br><span class="line">        $(id).prev(&quot;p&quot;).find(&quot;span&quot;).text(errorMsg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/csdn/" rel="tag"># csdn</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/27/code/jquery/" rel="next" title="jquery实用的代码片段">
+                <i class="fa fa-chevron-left"></i> jquery实用的代码片段
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/12/code/apicloud/" rel="prev" title="APIClound项目JS代码片段">
+                APIClound项目JS代码片段 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">jesse</p>
+              <p class="site-description motion-element" itemprop="description">前端开发爱好者</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#表单验证"><span class="nav-number">1.</span> <span class="nav-text">表单验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#翻页动画"><span class="nav-number">2.</span> <span class="nav-text">翻页动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#鼠标悬停图片预览，制作title提示"><span class="nav-number">3.</span> <span class="nav-text">鼠标悬停图片预览，制作title提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie网页更换皮肤"><span class="nav-number">4.</span> <span class="nav-text">Cookie网页更换皮肤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端font-size根据屏幕大小改变"><span class="nav-number">5.</span> <span class="nav-text">移动端font-size根据屏幕大小改变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件冒泡"><span class="nav-number">6.</span> <span class="nav-text">事件冒泡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#百度富文本编辑器"><span class="nav-number">7.</span> <span class="nav-text">百度富文本编辑器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#确保jQuery库与其它库不发生冲突"><span class="nav-number">8.</span> <span class="nav-text">确保jQuery库与其它库不发生冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三元运算符"><span class="nav-number">9.</span> <span class="nav-text">三元运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的轮播图原理"><span class="nav-number">10.</span> <span class="nav-text">简单的轮播图原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS设置cookie，删除cookie"><span class="nav-number">11.</span> <span class="nav-text">JS设置cookie，删除cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#仿猎聘网JQ代码片段"><span class="nav-number">12.</span> <span class="nav-text">仿猎聘网JQ代码片段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（字体-高度）增大变小"><span class="nav-number">13.</span> <span class="nav-text">（字体/高度）增大变小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据滚动条高度隐藏-显示（返回顶部）"><span class="nav-number">14.</span> <span class="nav-text">根据滚动条高度隐藏/显示（返回顶部）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向未来的元素添加事件处理程序"><span class="nav-number">15.</span> <span class="nav-text">向未来的元素添加事件处理程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文字闪烁效果"><span class="nav-number">16.</span> <span class="nav-text">文字闪烁效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery页面加载后居中显示消息框的方法"><span class="nav-number">17.</span> <span class="nav-text">jQuery页面加载后居中显示消息框的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容click和tap事件"><span class="nav-number">18.</span> <span class="nav-text">兼容click和tap事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js防止脚本注入"><span class="nav-number">19.</span> <span class="nav-text">js防止脚本注入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定事件，传递数据"><span class="nav-number">20.</span> <span class="nav-text">绑定事件，传递数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DIY手机端商城主页代码片段（jquery一些操作）"><span class="nav-number">21.</span> <span class="nav-text">DIY手机端商城主页代码片段（jquery一些操作）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1元购代码片段"><span class="nav-number">22.</span> <span class="nav-text">1元购代码片段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#倒计时和累加时间"><span class="nav-number">23.</span> <span class="nav-text">倒计时和累加时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#募才网移动端表单验证"><span class="nav-number">24.</span> <span class="nav-text">募才网移动端表单验证</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <!--
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  
+  <span class="author" itemprop="copyrightHolder">jesse</span>
+
+  
+</div>
+
+
+  <div class="powered-by">私人定制</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+
+  <div class="theme-info"><a class="theme-link" target="_blank" href="https://github.com/Wenj2/">gitthub</a></div>
+
+
+
+-->
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
