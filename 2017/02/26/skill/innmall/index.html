@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="csdn," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="–MAC OS 启动–打开多个终端终端1:npm run mock 启动模拟api终端2:npm run dev 启动页面这样就可以跑起来了或者iterm2 command+D 分出两个终端启动启动– windows 启动–。直接 npm run dev 会失败，  报错export是无效的命令==&amp;gt;  package scripts里面import 改为 setlocalhost:9090">
+<meta name="keywords" content="csdn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="鹰漠酒馆代码笔记">
+<meta property="og:url" content="http://www.mutool.cn/2017/02/26/skill/innmall/index.html">
+<meta property="og:site_name" content="mutool">
+<meta property="og:description" content="–MAC OS 启动–打开多个终端终端1:npm run mock 启动模拟api终端2:npm run dev 启动页面这样就可以跑起来了或者iterm2 command+D 分出两个终端启动启动– windows 启动–。直接 npm run dev 会失败，  报错export是无效的命令==&amp;gt;  package scripts里面import 改为 setlocalhost:9090">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-10T09:10:50.846Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="鹰漠酒馆代码笔记">
+<meta name="twitter:description" content="–MAC OS 启动–打开多个终端终端1:npm run mock 启动模拟api终端2:npm run dev 启动页面这样就可以跑起来了或者iterm2 command+D 分出两个终端启动启动– windows 启动–。直接 npm run dev 会失败，  报错export是无效的命令==&amp;gt;  package scripts里面import 改为 setlocalhost:9090">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.mutool.cn/2017/02/26/skill/innmall/"/>
+
+
+
+
+
+  <title>鹰漠酒馆代码笔记 | mutool</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">mutool</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">jesse62@163.com</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.mutool.cn/2017/02/26/skill/innmall/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="文杰">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mutool">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">鹰漠酒馆代码笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-26T19:31:03+08:00">
+                2017-02-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>–MAC OS 启动–<br>打开多个终端<br>终端1:npm run mock 启动模拟api<br>终端2:npm run dev 启动页面<br>这样就可以跑起来了<br>或者iterm2 command+D 分出两个终端启动启动<br>– windows 启动–。<br>直接 npm run dev 会失败，  报错export是无效的命令==&gt;  package scripts里面import 改为 set<br>localhost:9090 和 0.0.0.0：8080 无效<br>127.0.0.1:9090 和 127.0.0.1:8080 访问<br>—Package—————————————————————————<br>$ npm install –save/–save-dev  //–save生产环境  –save-dev开发环境<br>devDependencies  里面的插件只用于开发环境，不用于生产环境，而 dependencies  是需要发布到生产环境的。</p>
+<p>$ npm install json-server  //模拟API </p>
+<p>package.json中的script来配置脚本，NODE_ENV代表node进程，或者说时环境变量<br>下面的mock和test就是配置的变量，node运行时执行对应的脚本<br>$ npm run mock //启动项目（通过json-server模拟json数据，本地运行）<br>$ npm run test //用于打包，上线</p>
+<p>Babel是一个广泛使用的转码器，可以将ES6代码转为ES5代码，从而在现有环境执行。<br>// 转码前<br>input.map(item =&gt; item + 1);<br>// 转码后<br>input.map(function (item) {<br>  return item + 1;<br>});<br>babel配置<br>  {<br>    “presets”: [<br>      “es2015”,<br>      “react”,<br>      “stage-2”<br>    ],<br>    “plugins”: []<br>  }</p>
+<p>$ npm install classnames –save-dev<br>在React中编写模板时给标签添加class。如果是固定的className=”XX”就可以了。<br>如果要根据状态值动态应用或去除，或使用多个class时就麻烦了。可以使用classnames模块来解决：<br>var classnames= require(‘classnames’);<br>classnames(‘foo’, ‘bar’); // =&gt; ‘foo bar’<br>classNames(‘foo’, { bar: true }); // =&gt; ‘foo bar’ </p>
+<p>$ npm install clean-webpack-plugin –save-dev<br>clean-webpack-plugin用于在building之前删除你以前build过的文件</p>
+<p>$ npm install gulp-eslint –save-dev<br>EsLint帮助我们检查Javascript编程时的语法错误。比如：在Javascript应用中，你很难找到你漏泄的变量或者方法。<br>EsLint能够帮助我们分析JS代码，找到bug并确保一定程度的JS语法书写的正确性。</p>
+<p>$ npm install whatwg-fetch –save<br>异步请求API<br>fetch(location.herf, {<br>    method: “get”<br>}).then(function(response) {<br>    return response.text()<br>}).then(function(body) {<br>    console.log(body)<br>})</p>
+<p>—Webpack.config.js—————————————————————–<br>$$ import path from ‘path’;<br>//NodeJS中的Path对象，用于处理目录的对象，提高开发效率。<br>1、格式化路径 path.normalize(p)<br>path.normalize(‘/foo/bar//baz/asdf/quux/..’);<br>特点：将不符合规范的路径格式化，简化开发人员中处理各种复杂的路径判断<br>=&gt; ‘/foo/bar/baz/asdf’<br>2、路径合并 path.join([path1], [path2], […])<br>特点：将所有名称用path.seq串联起来，然后用normailze格式化<br>path.join(‘///foo’, ‘bar’, ‘//baz/asdf’, ‘quux’, ‘..’);<br>=&gt;’/foo/bar/baz/asdf’<br>3、路径寻航 path.resolve([from …], to)<br>特点：相当于不断的调用系统的cd命令,调用cd是为创建文件夹<br>path.resolve(‘foo/bar’, ‘/tmp/file/‘, ‘..’, ‘a/../subfile’)<br>//相当于：<br>cd foo/bar<br>cd /tmp/file/<br>cd ..<br>cd a/../subfile<br>pwd<br>4、相对路径 path.relative(from, to)<br>特点：返回某个路径下相对于另一个路径的相对位置串，相当于：path.resolve(from, path.relative(from, to)) == path.resolve(to)<br>path.relative(‘C:\orandea\test\aaa’, ‘C:\orandea\impl\bbb’)<br>=&gt;’..\..\impl\bbb’<br>path.relative(‘/data/orandea/test/aaa’, ‘/data/orandea/impl/bbb’)<br>=&gt;’../../impl/bbb’<br>5、文件夹名称 path.dirname(p)<br>特点：返回路径的所在的文件夹名称<br>path.dirname(‘/foo/bar/baz/asdf/quux’)<br>=&gt;’/foo/bar/baz/asdf’<br>……更多请百度</p>
+<p>$ npm install precss –save<br>var precss = require(‘precss’);<br>Precss 可以在 CSS 文件中使用 Sass 类型的 Markup。</p>
+<p>$ npm install autoprefixer –save<br>$$ import autoprefixer from ‘autoprefixer’;<br>Autoprefixer解析CSS文件并且添加浏览器前缀到CSS规则里，使用Can I Use的数据来决定哪些前缀是需要的<br>a{<br>     transition :transform 1s<br>}<br>Autoprefixer使用一个数据库根据当前浏览器的普及度以及属性支持提供给你前缀：<br>a{<br>     -webkit-transition :-webkit-transform 1s;<br>     transition :-ms-transform 1s;<br>     transition :transform 1s<br>}</p>
+<p>$ npm install html-webpack-plugin –save<br>$$ import HtmlWebpackPlugin from ‘html-webpack-plugin’;<br>这个插件用来简化创建服务于 webpack bundle 的 HTML 文件，尤其是对于在文件名中包含了 hash 值，<br>而这个值在每次编译的时候都发生变化的情况，会生成html</p>
+<p>$$ new webpack.optimize.CommonsChunkPlugin(‘common’, ‘bundle.js’),<br>CommonsChunkPlugin是提取公共代码块用的</p>
+<p>$$ new webpack.optimize.UglifyJsPlugin({<br>$$     compress: {<br>$$      warnings: false,<br>$$    },<br>$$  })<br>UglifyJsPlugin是js代码压缩工具</p>
+<p>$$ new webpack.optimize.OccurrenceOrderPlugin(),<br>根据模块调用次数，给模块分配ids，常被调用的ids分配更短的id，使得ids可预测，降低文件大小，该模块推荐使用<br>[ webpack 常用plugin和loader…<a href="https://segmentfault.com/a/1190000005106383" target="_blank" rel="noopener">https://segmentfault.com/a/1190000005106383</a> ]</p>
+<p>$ npm whatwg-fetch –save<br>fetch(url).then(response =&gt; response.json())<br>  .then(data =&gt; console.log(data))<br>  .catch(e =&gt; console.log(“Oops, error”, e))</p>
+<p>—ES6…——————————————————————————-<br>Arrow Function（箭头函数） =&gt;<br>x =&gt; x <em> x<br>上面的箭头函数相当于：<br>function (x) {<br>    return x </em> x;<br>}<br>箭头函数相当于匿名函数，并且简化了函数定义。<br>箭头函数有两种格式，一种像上面的，只包含一个表达式，连{ … }和return都省略掉了。<br>还有一种可以包含多条语句，这时候就不能省略{ … }和return：<br>x =&gt; {<br>    if (x &gt; 0) {<br>        return x <em> x;<br>    }<br>    else {<br>        return - x </em> x;<br>    }<br>}<br>箭头函数看上去是匿名函数的一种简写，但实际上，箭头函数和匿名函数有个明显的区别：<br>箭头函数内部的this是词法作用域，由上下文确定。<br>如果使用箭头函数，以前的那种hack写法：var that = this;<br>由于this在箭头函数中已经按照词法作用域绑定了，所以，<br>用call()或者apply()调用箭头函数时，无法对this进行绑定，即传入的第一个参数被忽略：<br>var obj = {<br>    birth: 1990,<br>    getAge: function (year) {<br>        var b = this.birth; // 1990<br>        var fn = (y) =&gt; y - this.birth; // this.birth仍是1990<br>        return fn.call({birth:2000}, year);<br>    }<br>};<br>obj.getAge(2015); // 25</p>
+<p>FormData对象<br>通过 JavaScript 用一些键值对来模拟一系列表单控件<br>var oMyForm = new FormData();<br>oMyForm.append(“accountnum”, 123456); // 数字123456被立即转换成字符串”123456”</p>
+<p>—app.jsx—————————————————————————-<br>let body = new FormData();<br>利用FormData对象,你可以使用一系列的键值对来模拟一个完整的表单,然后使用XMLHttpRequest发送这个”表单”.</p>
+<p>—前端框架————————————————————————–<br>[浅谈移动前端的最佳事件…<a href="http://www.cnblogs.com/yexiaochai/p/4219523.html]" target="_blank" rel="noopener">http://www.cnblogs.com/yexiaochai/p/4219523.html]</a><br>import ReactIScroll from ‘react-iscroll’<br>iscroll </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/csdn/" rel="tag"># csdn</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/11/skill/topic/" rel="next" title="有趣的题目">
+                <i class="fa fa-chevron-left"></i> 有趣的题目
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/31/skill/puppeteer/" rel="prev" title="puppeteer">
+                puppeteer <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">文杰</p>
+              <p class="site-description motion-element" itemprop="description">个人博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">文杰</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
